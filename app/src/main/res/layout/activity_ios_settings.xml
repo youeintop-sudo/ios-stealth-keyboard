@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ios_settings_bg"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ترويسة الإعدادات -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keyboard Engine Settings"
+            android:textColor="@color/ios_text_white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- بطاقة اختيار النمط: سطور أو مفردات -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ios_card_bg"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TYPING MODE"
+                android:textColor="@color/ios_subtext_gray"
+                android:textSize="12sp"
+                android:layout_marginBottom="10dp" />
+
+            <RadioGroup
+                android:id="@+id/radio_group_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_lines"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Lines Mode"
+                    android:textColor="@color/ios_text_white" />
+
+                <RadioButton
+                    android:id="@+id/rb_vocab"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Vocab Random"
+                    android:textColor="@color/ios_text_white" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- بطاقة الخانة الأولى: المقالات والسطور -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BOX 1: LINES / ARTICLES (Each Enter = 1 Message)"
+            android:textColor="@color/ios_subtext_gray"
+            android:textSize="12sp"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/edit_lines_box"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/ios_card_bg"
+            android:gravity="top|start"
+            android:hint="Paste paragraphs here...\nEach newline is a full message"
+            android:padding="12dp"
+            android:textColor="@color/ios_text_white"
+            android:textColorHint="#545458"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- بطاقة الخانة الثانية: المفردات العشوائية -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BOX 2: VOCABULARY POOL (Space or comma separated)"
+            android:textColor="@color/ios_subtext_gray"
+            android:textSize="12sp"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/edit_vocab_box"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/ios_card_bg"
+            android:gravity="top|start"
+            android:hint="apple tech cloud power fast speed win secure"
+            android:padding="12dp"
+            android:textColor="@color/ios_text_white"
+            android:textColorHint="#545458"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- تحديد المدى العشوائي للكلمات (مثلاً 20 إلى 30) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ios_card_bg"
+            android:padding="12dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/edit_min_words"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Min Words (20)"
+                android:inputType="number"
+                android:textColor="@color/ios_text_white"
+                android:textColorHint="#545458" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/ios_card_separator"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/edit_max_words"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Max Words (30)"
+                android:inputType="number"
+                android:textColor="@color/ios_text_white"
+                android:textColorHint="#545458" />
+        </LinearLayout>
+
+        <!-- بطاقة سرعة الكتابة (0 إلى 500 ميلي ثانية) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ios_card_bg"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/txt_speed_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Typing Delay: 100ms (100 WPM)"
+                android:textColor="@color/ios_text_white"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <SeekBar
+                android:id="@+id/seek_typing_speed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="500"
+                android:progress="100" />
+        </LinearLayout>
+
+        <!-- بطاقات التبديل (Toggles) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ios_card_bg"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp">
+
+            <Switch
+                android:id="@+id/switch_replace_space"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Replace Space with [ + ]"
+                android:textColor="@color/ios_text_white"
+                android:padding="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/ios_card_separator" />
+
+            <Switch
+                android:id="@+id/switch_auto_send"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Universal Auto-Send after completion"
+                android:textColor="@color/ios_text_white"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- زر الحفظ الأزرق بأسلوب آبل -->
+        <Button
+            android:id="@+id/btn_save_settings"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:backgroundTint="@color/ios_apple_blue"
+            android:text="Save Keyboard Configuration"
+            android:textColor="@color/ios_text_white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp" />
+
+    </LinearLayout>
+</ScrollView>
