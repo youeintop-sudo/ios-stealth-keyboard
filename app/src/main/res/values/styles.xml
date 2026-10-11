@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- نمط الحرف العادي -->
+    <style name="IosKeyNormal">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">2.5dp</item>
+        <item name="android:layout_marginEnd">2.5dp</item>
+        <item name="android:background">@drawable/ios_key_bg</item>
+        <item name="android:textColor">@color/ios_text_white</item>
+        <item name="android:textSize="22sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- نمط الأزرار الوظيفية (Shift, Delete, Space, Return) -->
+    <style name="IosKeySpecial">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginStart">2.5dp</item>
+        <item name="android:layout_marginEnd">2.5dp</item>
+        <item name="android:background">@drawable/ios_key_special_bg</item>
+        <item name="android:textColor">@color/ios_text_white</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+</resources>
