@@ -2,6 +2,7 @@ package com.stealth.ioskeyboard
 
 import android.media.AudioAttributes
 import android.media.AudioFormat
+import android.media.AudioManager
 import android.media.AudioTrack
 import kotlin.math.exp
 import kotlin.math.sin
@@ -23,9 +24,8 @@ class IosAudioEngine {
     private fun generateIosClickWaveform() {
         for (i in 0 until numSamples) {
             val t = i.toDouble() / sampleRate
-            // محاكاة التردد المزدوج: نقرة حادة 1150Hz ونقرة خفيفة 180Hz مع تلاشي أسي سريع
             val wave = 0.8 * sin(2.0 * Math.PI * 1150.0 * t) + 0.3 * sin(2.0 * Math.PI * 180.0 * t)
-            val envelope = exp(-t * 220.0) // انحدار سريع جداً يحاكي لمس الزجاج
+            val envelope = exp(-t * 220.0)
             val sample = (wave * envelope * Short.MAX_VALUE * 0.75).toInt()
             audioBuffer[i] = sample.coerceIn(Short.MIN_VALUE.toInt(), Short.MAX_VALUE.toInt()).toShort()
         }
@@ -49,7 +49,7 @@ class IosAudioEngine {
                 format,
                 audioBuffer.size * 2,
                 AudioTrack.MODE_STATIC,
-                AudioTrack.AUDIO_SESSION_ID_GENERATE
+                AudioManager.AUDIO_SESSION_ID_GENERATE
             ).apply {
                 write(audioBuffer, 0, audioBuffer.size)
             }
@@ -66,7 +66,6 @@ class IosAudioEngine {
                 it.reloadStaticData()
                 it.play()
             } catch (e: Exception) {
-                // استعادة المسار في حالة المقاطعة
                 setupAudioTrack()
                 it.play()
             }
