@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- حالة الضغط (عند لمس الزر أو كتابته آلياً) -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/ios_key_pressed" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+    
+    <!-- الحالة الافتراضية مع الظل السفلي الدقيق -->
+    <item>
+        <layer-list>
+            <!-- الظل السفلي البارز بارتفاع 1.5 بكسل -->
+            <item android:top="1dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/ios_key_shadow" />
+                    <corners android:radius="6dp" />
+                </shape>
+            </item>
+            <!-- السطح العلوي للزر -->
+            <item android:bottom="1.5dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/ios_key_normal" />
+                    <corners android:radius="6dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>
