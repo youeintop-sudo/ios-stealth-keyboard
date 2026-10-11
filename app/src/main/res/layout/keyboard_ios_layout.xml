@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/keyboard_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ios_keyboard_surface"
+    android:orientation="vertical"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="12dp">
+
+    <!-- الصف الأول: Q إلى P -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginBottom="7dp">
+
+        <Button android:id="@+id/btn_q" style="@style/IosKeyNormal" android:text="q" />
+        <Button android:id="@+id/btn_w" style="@style/IosKeyNormal" android:text="w" />
+        <Button android:id="@+id/btn_e" style="@style/IosKeyNormal" android:text="e" />
+        <Button android:id="@+id/btn_r" style="@style/IosKeyNormal" android:text="r" />
+        <Button android:id="@+id/btn_t" style="@style/IosKeyNormal" android:text="t" />
+        <Button android:id="@+id/btn_y" style="@style/IosKeyNormal" android:text="y" />
+        <Button android:id="@+id/btn_u" style="@style/IosKeyNormal" android:text="u" />
+        <Button android:id="@+id/btn_i" style="@style/IosKeyNormal" android:text="i" />
+        <Button android:id="@+id/btn_o" style="@style/IosKeyNormal" android:text="o" />
+        <Button android:id="@+id/btn_p" style="@style/IosKeyNormal" android:text="p" />
+    </LinearLayout>
+
+    <!-- الصف الثاني: A إلى L (مزاح نحو المنتصف مثل آيفون بالضبط) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:weightSum="9"
+        android:layout_marginBottom="7dp">
+
+        <Button android:id="@+id/btn_a" style="@style/IosKeyNormal" android:text="a" />
+        <Button android:id="@+id/btn_s" style="@style/IosKeyNormal" android:text="s" />
+        <Button android:id="@+id/btn_d" style="@style/IosKeyNormal" android:text="d" />
+        <Button android:id="@+id/btn_f" style="@style/IosKeyNormal" android:text="f" />
+        <Button android:id="@+id/btn_g" style="@style/IosKeyNormal" android:text="g" />
+        <Button android:id="@+id/btn_h" style="@style/IosKeyNormal" android:text="h" />
+        <Button android:id="@+id/btn_j" style="@style/IosKeyNormal" android:text="j" />
+        <Button android:id="@+id/btn_k" style="@style/IosKeyNormal" android:text="k" />
+        <Button android:id="@+id/btn_l" style="@style/IosKeyNormal" android:text="l" />
+    </LinearLayout>
+
+    <!-- الصف الثالث: Shift، الحروف من Z إلى M، وزر الحذف -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="7dp">
+
+        <!-- زر Shift العريض -->
+        <Button
+            android:id="@+id/btn_shift"
+            style="@style/IosKeySpecial"
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:text="⇧"
+            android:textSize="20sp" />
+
+        <Button android:id="@+id/btn_z" style="@style/IosKeyNormal" android:text="z" />
+        <Button android:id="@+id/btn_x" style="@style/IosKeyNormal" android:text="x" />
+        <Button android:id="@+id/btn_c" style="@style/IosKeyNormal" android:text="c" />
+        <Button android:id="@+id/btn_v" style="@style/IosKeyNormal" android:text="v" />
+        <Button android:id="@+id/btn_b" style="@style/IosKeyNormal" android:text="b" />
+        <Button android:id="@+id/btn_n" style="@style/IosKeyNormal" android:text="n" />
+        <Button android:id="@+id/btn_m" style="@style/IosKeyNormal" android:text="m" />
+
+        <!-- زر الحذف Backspace -->
+        <Button
+            android:id="@+id/key_delete"
+            style="@style/IosKeySpecial"
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:text="⌫"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- الصف الرابع: الأرقام 123، المسافة الكبرى، وزر الإدخال/الإرسال Return -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_sym"
+            style="@style/IosKeySpecial"
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:text="123"
+            android:textSize="16sp" />
+
+        <!-- زر المسافة الأساسي (Spacebar) - محفز التايبر الخفي -->
+        <Button
+            android:id="@+id/key_space"
+            style="@style/IosKeySpecial"
+            android:layout_width="0dp"
+            android:layout_weight="4.5"
+            android:text="space"
+            android:textAllCaps="false"
+            android:textSize="15sp" />
+
+        <!-- زر الإدخال/الإرسال Return -->
+        <Button
+            android:id="@+id/key_enter"
+            style="@style/IosKeySpecial"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:text="return"
+            android:textAllCaps="false"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>
