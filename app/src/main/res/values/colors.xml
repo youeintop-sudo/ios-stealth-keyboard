@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ألوان كيبورد آيفون الداكنة الرسمية -->
+    <color name="ios_black_bg">#000000</color>
+    <color name="ios_keyboard_surface">#121214</color>
+    <color name="ios_key_normal">#38383A</color>
+    <color name="ios_key_shadow">#18181A</color>
+    <color name="ios_key_pressed">#68686C</color>
+    <color name="ios_key_special">#242426</color>
+    <color name="ios_text_white">#FFFFFF</color>
+    
+    <!-- ألوان شاشة الإعدادات بأسلوب بطاقات آبل -->
+    <color name="ios_settings_bg">#000000</color>
+    <color name="ios_card_bg">#1C1C1E</color>
+    <color name="ios_card_separator">#2C2C2E</color>
+    <color name="ios_subtext_gray">#8E8E93</color>
+    <color name="ios_apple_blue">#007AFF</color>
+    <color name="ios_apple_green">#34C759</color>
+    <color name="ios_apple_red">#FF3B30</color>
+</resources>
